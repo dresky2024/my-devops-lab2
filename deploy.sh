@@ -4,7 +4,7 @@
 echo "<h1>XXNB Site updated at: $(date)</h1><p>Deploy automated by Bash!</p>" > index.html
 
 # 2. Пересобираем Docker-образ с новым тегом (версией)
-docker build -t my-app:latest .
+docker build --no-cache -t my-app:latest .
 
 # 3. Останавливаем и удаляем старый контейнер, если он запущен
 docker stop running-app || true
